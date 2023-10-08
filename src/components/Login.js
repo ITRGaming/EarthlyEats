@@ -91,7 +91,7 @@ function Login() {
 	return (
 		<>
 			<section id='login'>
-				<div className="container">
+				<div className="log_container">
 					<input type="checkbox" id="check" />
 					<div className="login form">
 						<header>Login</header>
