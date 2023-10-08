@@ -1,7 +1,7 @@
 body {
   background-color: #79C96C;
-  margin: 5px;
-  padding: 5px;
+  /* margin: 5px; */
+  /* padding: 5px; */
 }
 
 .Homepage {
@@ -46,9 +46,8 @@ body {
 }
 
 .card {
-  border: #121111 2px;
-  
   align-items: center;
+  text-align: center;
   width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -63,7 +62,7 @@ body {
 
 .card-icon {
   margin-bottom: 10px;
-  margin-top: 20%;
+  margin-top: 50%;
 }
 
 .card h2 {

@@ -1,4 +1,4 @@
-.container{
+.pro_container{
    
     width: 1040px;
 }
@@ -13,7 +13,14 @@
     margin-top: 20px;
     width: 300px;
 }
+.img-div{
+    height: 270px;
+}
+.card-img-top{
+    max-height: 270px;
+}
 .addtocart{
+    top: 100%;
     font-style: bold;
     border-radius: 20px;
     background-color: #FB5353;

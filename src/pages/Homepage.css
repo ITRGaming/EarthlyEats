@@ -51,7 +51,7 @@ form {
   /* Styling for form groups (each input or textarea) */
   div {
     margin-bottom: 20px;
-    text-align: left; /* Align the labels and inputs to the left */
+    /* text-align: left; Align the labels and inputs to the left */
   }
   
   /* Styling for labels */

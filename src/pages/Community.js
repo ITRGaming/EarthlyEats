@@ -48,7 +48,7 @@ function Community() {
                         <img className='earth' src="./images/earth.png" alt="Icon 1" />
                     </div>
                     <div className="card-content">
-                        <h2>Environmental Sustainability</h2>
+                        <h5>Environmental Sustainability</h5>
                         
                     </div>
 

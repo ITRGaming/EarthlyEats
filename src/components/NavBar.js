@@ -8,7 +8,7 @@ export default function NavBar() {
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg bg-body-tertiary" id='navId'>
                     <div className="container-fluid">
-                        <a className="navbar-brand" id='logo' href="/home"><img src="" alt="not found" /></a>
+                        <Link className="navbar-brand" id='logo' to="/home"><img src="../logo.png" alt="not found" /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
