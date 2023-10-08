@@ -1,0 +1,183 @@
+body {
+  background-color: #79C96C;
+  margin: 5px;
+  padding: 5px;
+}
+
+.Homepage {
+  background-color: #C2F6B5;
+}
+
+.custom-navbar-bg {
+  background-color: #FEFFBF;
+}
+
+.search {
+  width: 30px;
+}
+
+
+/* .appetite{
+    background-color: #FEFFBF;
+} */
+.pigu {
+  background-size: cover;
+
+  width: 100%;
+  height: 300px;
+}
+
+.bg {
+  background-color: #FEFFBF;
+}
+
+
+.imgchotu {
+  height: 100px;
+}
+
+.card-container {
+  /* background-image: url('./images/line.png'); */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.card {
+  border: #121111 2px;
+  
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  height: 50vh;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  margin-bottom: 10px;
+  margin-top: 20%;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.earth {
+  width: 120px;
+}
+
+.card1 {
+  background-color: #FEFFBF;
+}
+
+.card2 {
+  background-color: #FBDDCC;
+}
+
+.card3 {
+  background-color: #E1FDDD;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Set the parent container to full viewport height (adjust as needed) */
+}
+
+.horizontal-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: #FFFFFF 2px solid;
+  display: flex;
+  align-items: center;
+  /* Vertically center the content within the horizontal box */
+
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.description {
+  flex: 2;
+}
+
+.description h2 {
+  font-size: 1.5rem;
+}
+
+.description p {
+  font-size: 1.2rem;
+
+}
+
+.horizontal-box-reversed {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: #FFFFFF 2px solid;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.description-left {
+  flex: 2;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.description-left h2 {
+  font-size: 1.5rem;
+}
+
+.description-left p {
+  font-size: 1.2rem;
+
+}
+
+.image-right {
+  flex: 1;
+}
+
+.image-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ras {
+  color: #FF3030;
+}
+
+.para {
+  color: #FFFFFF;
+
+}
