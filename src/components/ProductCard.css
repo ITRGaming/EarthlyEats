@@ -14,10 +14,11 @@
     width: 300px;
 }
 .img-div{
-    height: 270px;
+    height: 60%;
+    /* width: auto; */
 }
 .card-img-top{
-    max-height: 270px;
+    max-height: 100%;
 }
 .addtocart{
     top: 100%;
