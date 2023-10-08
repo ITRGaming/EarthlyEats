@@ -10,7 +10,7 @@ body{
   width: 100%;
   background: #ffffff;
 }
-.container{
+.log_container{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,7 +21,7 @@ body{
   border-radius: 7px;
   box-shadow: 0 5px 10px 0 rgb(251, 255, 65);
 }
-.container .registration{
+.log_container .registration{
   display: none;
 }
 #check:checked ~ .registration{
@@ -33,7 +33,7 @@ body{
 #check{
   display: none;
 }
-.container .form{
+.log_container .form{
   padding: 2rem;
 }
 .form header{
