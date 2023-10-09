@@ -2,6 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import ProductCard from '../components/ProductCard';
 import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar';
 // import ContactUs from '../components/Contactus';
 
 function Homepage() {
@@ -57,46 +58,46 @@ function Homepage() {
                 <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
 
 
-                ></img>
+                    ></img>
 
-            </div>
-            <div className="appetite d-flex justify-content-center">
-                <img className="appetite-img" src="./images/appetite.png" alt="slogan"
-                    width="550" height="70" style={{ marginBottom: '20px' }}
-                ></img>
+                </div>
+                <div className="appetite d-flex justify-content-center">
+                    <img className="appetite-img" src="./images/appetite.png" alt="slogan"
+                        width="550" height="70" style={{ marginBottom: '20px' }}
+                    ></img>
 
-            </div>
-            <div className="container">
-                <div className="product">
+                </div>
+                <div className="container">
+                    <div className="product">
 
 
 
-                    <div className="row">
-                        {products.map((product) => (
-                            <div className="col-md-4" key={product.id}>
-                                <ProductCard productName={product.productName} imageUrl={product.imageUrl} />
-                            </div>
-                        ))}
+                        <div className="row">
+                            {products.map((product) => (
+                                <div className="col-md-4" key={product.id}>
+                                    <ProductCard productName={product.productName} imageUrl={product.imageUrl} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div>
-                <form className='form'>
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div>
-                        <label htmlFor="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
+                <div>
+                    <form className='form'>
+                        <div>
+                            <label htmlFor="name">Name:</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div>
+                            <label htmlFor="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
 
             </div>
         </div>

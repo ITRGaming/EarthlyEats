@@ -1,6 +1,6 @@
-import React from "react";
-import "./Community.css";
-import NavBar from "../components/NavBar";
+import React from 'react';
+import NavBar from '../components/NavBar';
+import './Community.css';
 function Community() {
   return (
     <>

@@ -27,6 +27,11 @@ export default function NavBar() {
                                     <Link className="nav-link" to="/">Login/Signup</Link>
                                 </li>
                                 <li className="nav-item">
+                                    <Link className="nav-link" to="search"><span class="material-symbols-outlined">
+                                        search
+                                    </span></Link>
+                                </li>
+                                <li className="nav-item">
                                     <a className="nav-link" href="/cart"><span class="material-symbols-outlined">
                                         shopping_cart
                                     </span></a>
