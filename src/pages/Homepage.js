@@ -11,11 +11,7 @@ function Homepage() {
     // };
 
     const products = [
-        // {
-        //     id: 1,
-        //     productName: 'Plant Based Peppy Popcorn',
-        //     imageUrl: './images/plantbasedpeppypopcorn.png', // Replace with the actual image URL
-        // },
+
         {
             id: 1,
             productName: 'Plant Based Peppy Popcorn',
@@ -46,15 +42,41 @@ function Homepage() {
             productName: 'Plant Based Chicken Momo',
             imageUrl: './images/pepperoni.png', // Replace with the actual image URL
         },
+        {
+            id: 7,
+            productName: 'Plant Based Sudo Chicken Samosa',
+            imageUrl: './images/samosa.png', // Replace with the actual image URL
+        },
+        {
+            id: 8,
+            productName: 'Plant Based Chicken Burger Patty',
+            imageUrl: './images/keeema.png', // Replace with the actual image URL
+        },
+        {
+            id: 9,
+            productName: 'Plant Based Mozarella style Shreds ',
+            imageUrl: './images/shreds.png', // Replace with the actual image URL
+        },
+        {
+            id: 10,
+            productName: 'Plant Based Drink Chocolate ',
+            imageUrl: './images/drink.png', // Replace with the actual image URL
+        },
+        {
+            id: 11,
+            productName: 'Plant Based Beyond Beef ',
+            imageUrl: './images/beef.png', // Replace with the actual image URL
+        },
 
-        // Add more product objects as needed
+
+
     ];
     return (
-      <>
-        <NavBar/>
-        <div className="Homepage">
-            <div className="slogan d-flex justify-content-center">
-                <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
+        <>
+            <NavBar />
+            <div className="Homepage">
+                <div className="slogan d-flex justify-content-center">
+                    <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
 
 
                     ></img>
@@ -98,8 +120,8 @@ function Homepage() {
                         <button type="submit">Submit</button>
                     </form>
 
+                </div>
             </div>
-        </div>
         </>
     );
 }
