@@ -8,7 +8,7 @@
 body{
   min-height: 100vh;
   width: 100%;
-  background: #ffffff;
+  background:#79C96C;
 }
 .log_container{
   position: absolute;
@@ -19,7 +19,7 @@ body{
   width: 100%;
   background: #fff;
   border-radius: 7px;
-  box-shadow: 0 5px 10px 0 rgb(251, 255, 65);
+  /* box-shadow: 0 5px 10px 0 rgb(0, 0, 0); */
 }
 .log_container .registration{
   display: none;
@@ -33,16 +33,16 @@ body{
 #check{
   display: none;
 }
-.log_container .form{
+.log_container .l_s_form{
   padding: 2rem;
 }
-.form header{
+.l_s_form header{
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 1.5rem;
 }
- .form input{
+ .l_s_form input{
    height: 60px;
    width: 100%;
    padding: 0 15px;
@@ -52,20 +52,20 @@ body{
    border-radius: 6px;
    outline: none;
  }
- .form input:focus{
+ .l_s_form input:focus{
    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
  }
-.form a{
+.l_s_form a{
   font-size: 16px;
   color: #009579;
   text-decoration: none;
 }
-.form a:hover{
+.l_s_form a:hover{
   text-decoration: underline;
 }
-.form input.button{
+.l_s_form input.button{
   color: black;
-  background: #FBFF41;
+  background: #79C96C;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -73,8 +73,8 @@ body{
   cursor: pointer;
   transition: 0.4s;
 }
-.form input.button:hover{
-  color: #FBFF41;
+.l_s_form input.button:hover{
+  color: #79C96C;
   background: black;
   transition: all 0.4s linear;
 }

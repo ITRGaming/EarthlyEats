@@ -1,7 +1,7 @@
 import './App.css';
 import Homepage from './pages/Homepage';
 import { Routes, Route} from "react-router-dom";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 // import NavBar from "./components/NavBar";
 import Community from "./pages/Community";
 import Search  from "./pages/Search"

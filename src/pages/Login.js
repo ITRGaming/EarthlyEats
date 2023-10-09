@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import Validation from "./validation";
-import Homepage from "../pages/Homepage";
+import Validation from "../components/validation";
+import Homepage from "./Homepage";
 import { useNavigate } from "react-router-dom";
 
 export function signOut() {
@@ -51,41 +51,25 @@ function Login() {
     confirm_password: "",
   });
 
-  const getErrors = async () => {
-    // Make a request to the server to get the errors
-    const response = await fetch('/api/errors');
-  
-    // Parse the response as JSON
-    const errors = await response.json();
-  
-    // Return the errors
-    return errors;
-  };
-  
-
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    // Wait for the errors state to be complete
-    getErrors().then((errors) => {
-      // Update the errors state
-      setErrors(errors);
-    });
-  }, []);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const handleValidation = (e) => {
-    e.preventDefault();
-    setErrors(Validation(values));
+      e.preventDefault();
+      setErrors(Validation(values));
+      console.log(Object.keys(errors).length);
+      return Object.keys(errors).length === 0;
+
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     handleValidation(e);
-    console.log(Object.keys(errors).length);
+    
     console.log(Object.keys(errors));
-    if (Object.keys(errors).length === 0) {
+    if (handleValidation(e)) {
       fetch("http://localhost:5000/register", {
         method: "POST",
         crossDomain: true,
@@ -104,14 +88,18 @@ function Login() {
         // {
         // 	console.log(data, reg)
         // 	if (reg = "pass"){
-        // 		alert("Registration Succesfull")
         // 	}
         // })
         .then((data) => {
-          console.log(data.error);
+          console.log(data);
+          if (data.error === "Email already exists") {
+            alert("User Already Exists");
+          } else {
+            console.log(data, "userRegister");
+            alert("Registration Succesfull");
+          }
         });
       // .then((data) => {
-      // 	console.log(data, "userRegister")
       // })
     }
   };
@@ -120,7 +108,7 @@ function Login() {
       <section id="login">
         <div className="log_container">
           <input type="checkbox" id="check" />
-          <div className="login form">
+          <div className="login l_s_form">
             <header>Login</header>
             <form onSubmit={handleLogin}>
               <input
@@ -151,7 +139,7 @@ function Login() {
             </div>
           </div>
 
-          <div className="registration form">
+          <div className="registration l_s_form">
             <header>Signup</header>
             <form onSubmit={handleSubmit}>
               <input

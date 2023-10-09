@@ -16,7 +16,8 @@
 }
 
 .slogan {
-    margin-top: 30px;
+  padding-top: 30px;
+    margin-top: 0px;
     margin-bottom : 0px;
 }
 .appetite-img{
@@ -37,7 +38,7 @@
 
 }
 /* Center align the form container */
-form {
+.form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -49,10 +50,10 @@ form {
   }
   
   /* Styling for form groups (each input or textarea) */
-  div {
+  /* div {
     margin-bottom: 20px;
-    /* text-align: left; Align the labels and inputs to the left */
-  }
+    text-align: left; Align the labels and inputs to the left
+  } */
   
   /* Styling for labels */
   label {
