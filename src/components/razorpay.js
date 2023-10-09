@@ -36,7 +36,7 @@ export const displayRazorpay = async (amount) => {
       alert("Payment Successfully");
     },
     prefill: {
-      name: "code with akky",
+      name: "",
     },
   };
 

@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProductCard.css";
-import products from "./product";
+// import products from "./product";
+import { displayRazorpay } from "./razorpay";
+
 function ProductCard({ id, productName, imageUrl }) {
   return (
     <div className="card">
@@ -9,7 +11,7 @@ function ProductCard({ id, productName, imageUrl }) {
       </div>
       <div className="card-body text-center">
         <h5 className="card-title text-center">{productName}</h5>
-        <button className="btn addtocart">
+        <button className="btn addtocart" onClick={() => displayRazorpay(500)}>
           Add to Cart
         </button>
       </div>
