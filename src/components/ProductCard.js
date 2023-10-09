@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductCard.css";
-
+import products from "./product";
 function ProductCard({ id, productName, imageUrl }) {
   return (
     <div className="card">
