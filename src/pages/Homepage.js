@@ -2,7 +2,6 @@ import React from 'react';
 import './Homepage.css';
 import ProductCard from '../components/ProductCard';
 import NavBar from '../components/NavBar';
-import NavBar from '../components/NavBar';
 // import ContactUs from '../components/Contactus';
 
 function Homepage() {

@@ -11,18 +11,18 @@ export function signOut() {
 function Login() {
   const history = useNavigate();
 
-  const [Loginvalue, setLogin] = useState({
+  const [loginValue, setLogin] = useState({
     loginEmail: "",
     loginPassword: "",
   });
 
   const handleData = (e) => {
-    setLogin({ ...Loginvalue, [e.target.name]: e.target.value });
+    setLogin({ ...loginValue, [e.target.name]: e.target.value });
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/register", {
+    fetch("http://localhost:5000/login-user", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -31,15 +31,17 @@ function Login() {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        email: Loginvalue.loginEmail,
-        password: Loginvalue.loginPassword,
+        email: loginValue.loginEmail, 
+        password: loginValue.loginPassword,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "userLoggedIn");
-        // history("/home")
-        // alert("Succesfully LoggedIn")
+        console.log(data, data.data, "userLoggedIn");
+        if(data.data != null){
+          alert("Succesfully LoggedIn")
+          history("/home")
+        }
         window.localStorage.setItem("token", data.data);
         window.localStorage.setItem("IsLoggedIn", true);
       });
@@ -113,12 +115,14 @@ function Login() {
             <form onSubmit={handleLogin}>
               <input
                 type="text"
+                name="loginEmail"
                 placeholder="Enter your email"
                 onChange={handleData}
                 required
               />
               <input
                 type="password"
+                name="loginPassword"
                 placeholder="Enter your password"
                 onChange={handleData}
                 required

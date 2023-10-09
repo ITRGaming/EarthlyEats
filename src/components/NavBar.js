@@ -27,7 +27,7 @@ export default function NavBar() {
                                     <Link className="nav-link" to="/">Login/Signup</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="search"><span class="material-symbols-outlined">
+                                    <Link className="nav-link" to="/search"><span class="material-symbols-outlined">
                                         search
                                     </span></Link>
                                 </li>
