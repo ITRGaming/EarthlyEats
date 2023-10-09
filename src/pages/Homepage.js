@@ -51,41 +51,7 @@ function Homepage() {
     return (
         <div className="Homepage">
 
-            {/* <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-                <div class="container-fluid">
-                    <img src=" " alt=" logo"></img>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse " id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a className="nav-link active" href="#">Community</a>
-                            </li>
-                            <li class="nav-item">
-                                <a className="nav-link active" href="#">About Us
-
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <form className="form-inline d-flex">
-                        <a href="./Cart.js" >
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-light my-2 my-sm-0" type="submit"><img className="search" src="https://cdn-icons-png.flaticon.com/128/2951/2951199.png" alt="search" onClick={goToCartPage} ></img></button>
-                        </a>
-                    </form>
-                    <form className="form-inline d-flex">
-
-                        <button className="btn btn-outline-light my-2 my-sm-0" type="submit"><img className="search" src="https://cdn-icons-png.flaticon.com/128/833/833314.png" alt="cart" onClick={goToCartPage} ></img></button>
-                    </form>
-
-                </div>
-            </nav> */}
+           
 
             <div className="slogan d-flex justify-content-center">
                 <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
