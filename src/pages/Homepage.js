@@ -51,11 +51,11 @@ function Homepage() {
     //     // Add more product objects as needed
     // ];
     return (
-      <>
-        <NavBar/>
-        <div className="Homepage">
-            <div className="slogan d-flex justify-content-center">
-                <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
+        <>
+            <NavBar />
+            <div className="Homepage">
+                <div className="slogan d-flex justify-content-center">
+                    <img src="./images/Slogan.png" alt="slogan" style={{ marginBottom: '20px' }}
 
 
                     ></img>
@@ -99,8 +99,8 @@ function Homepage() {
                         <button type="submit">Submit</button>
                     </form>
 
+                </div>
             </div>
-        </div>
         </>
     );
 }
