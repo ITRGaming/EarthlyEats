@@ -74,7 +74,7 @@ function Homepage() {
                         <div className="row">
                             {products.map((product) => (
                                 <div className="col-md-4" key={product.id}>
-                                    <ProductCard productName={product.productName} imageUrl={product.imageUrl} />
+                                    <ProductCard id={product.id} productName={product.productName} imageUrl={product.imageUrl} />
                                 </div>
                             ))}
                         </div>
