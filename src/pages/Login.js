@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import Validation from "../components/validation";
-import Homepage from "./Homepage";
+// import Homepage from "./Homepage";
 import { useNavigate } from "react-router-dom";
 
 export function signOut() {
@@ -57,20 +57,18 @@ function Login() {
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    const validationErrors = Validation({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+    setErrors(validationErrors);
   };
-  const handleValidation = (e) => {
+  // const handleValidation = async (e) => {
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(Validation(values));
-    console.log(Object.keys(errors).length);
-    return Object.keys(errors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    handleValidation(e);
-
-    console.log(Object.keys(errors));
-    if (handleValidation(e)) {
       fetch("http://localhost:5000/register", {
         method: "POST",
         crossDomain: true,
@@ -82,27 +80,28 @@ function Login() {
         body: JSON.stringify({
           email: values.email,
           password: values.password,
+          confirm_password: values.password,
         }),
       })
         .then((res) => res.json())
-        // .then((data, reg) =>
-        // {
-        // 	console.log(data, reg)
-        // 	if (reg = "pass"){
-        // 	}
-        // })
         .then((data) => {
           console.log(data);
+          console.log(Object.keys(data));
           if (data.error === "Email already exists") {
             alert("User Already Exists");
-          } else {
+          } else if (data.error === " error"){
+            alert('Invalid Credentials')
+          } else if (data.status ==="ok"){
+            alert('Registration Succesfull')
             console.log(data, "userRegister");
-            alert("Registration Succesfull");
-          }
-        });
+            window.localStorage.setItem("IsLoggedIn", true);
+            history("/home");
+          }else{
+            alert("Unknow error, try again");
+          } 
+          });
       // .then((data) => {
       // })
-    }
   };
   return (
     <>
@@ -113,7 +112,7 @@ function Login() {
             <div className="auth_div">
               <img
                 className="auth_img login_img"
-                alt="Image"
+                alt="login"
                 src="./images/auth_img.jpg"
               />
             </div>
@@ -155,7 +154,7 @@ function Login() {
             <div className="auth_div sign_up">
               <img
                 className="auth_img sign_up_img"
-                alt="Image"
+                alt="sign_up"
                 src="./images/auth_img.jpg"
               />
             </div>
