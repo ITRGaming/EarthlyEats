@@ -13,7 +13,7 @@ function AboutUs() {
                 alt='EarthlyEats'
                 className='background-image'
             />
-             {/* <section className='title' id='hero'> 
+             <section className='title' id='hero'> 
                 <div className='container position-relative text-center'>
                     <div className='row my-5'>
                         <div className='col-lg-12'>
@@ -22,8 +22,8 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </section>  */}
-            {/* <section id='main' className='about'>
+            </section> 
+            <section id='main' className='about'>
                 <div className='container ' data-aos='fade-up'>
                     <div className=" row my-4">
                         <div className='col-lg-6 order-1 order-lg-2 ' >
@@ -49,8 +49,8 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </section> */}
-            {/* <section id='why-us' className='why-us'>
+            </section>
+            <section id='why-us' className='why-us'>
                 <div className='container'>
                     <div className='section-title'>
                         <h1>Why Us</h1>
@@ -80,7 +80,7 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <Footer/>
         </>
     );
