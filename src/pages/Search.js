@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../components/ProductCard.css';
 import ProductCard from '../components/ProductCard';
+import "./Search.css"
 
-function Search(){
+
+function Search() {
+    const [search, setSearch] = useState('');
+    console.log(search);
+
+
     const products = [
-       
+
         {
             id: 1,
             productName: 'Plant Based Peppy Popcorn',
@@ -38,6 +44,33 @@ function Search(){
 
 
     ];
-    
+    return (
+        <>
+            <form className="form-inline">
+                <input class="form-control mr-sm-2" type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search" aria-label="Search" />
+                {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+            </form>
+
+
+            <div className="container">
+                <div className="product">
+                    <div className="row">
+                        {products
+                            .filter((product) => {
+                                const productName = product.productName || " "; // Ensure productName is a string
+                                return search.toLowerCase() === "" ? true : productName.toLowerCase().includes(search.toLowerCase());
+                            })
+                            .map((product) => (
+                                <div className="col-md-4" key={product.id}>
+                                    <ProductCard productName={product.productName} imageUrl={product.imageUrl} />
+                                </div>
+                            ))}
+
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+
 }
 export default Search;
