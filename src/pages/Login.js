@@ -41,7 +41,11 @@ function Login() {
         if (data.data != null) {
           alert("Succesfully LoggedIn");
           history("/home");
-        }
+        } else if (data.error === "User not found") {
+          alert("User not found");
+        } else if (data.error === "Invalid Password") {
+          alert("Invalid Password");
+        } else { alert("Unknow error, try again"); }
         window.localStorage.setItem("token", data.data);
         window.localStorage.setItem("IsLoggedIn", true);
       });
@@ -69,39 +73,39 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(Validation(values));
-      fetch("http://localhost:5000/register", {
-        method: "POST",
-        crossDomain: true,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-          confirm_password: values.password,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          console.log(Object.keys(data));
-          if (data.error === "Email already exists") {
-            alert("User Already Exists");
-          } else if (data.error === " error"){
-            alert('Invalid Credentials')
-          } else if (data.status ==="ok"){
-            alert('Registration Succesfull')
-            console.log(data, "userRegister");
-            window.localStorage.setItem("IsLoggedIn", true);
-            history("/home");
-          }else{
-            alert("Unknow error, try again");
-          } 
-          });
-      // .then((data) => {
-      // })
+    fetch("http://localhost:5000/register", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email: values.email,
+        password: values.password,
+        confirm_password: values.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        console.log(Object.keys(data));
+        if (data.error === "Email already exists") {
+          alert("User Already Exists");
+        } else if (data.error === " error") {
+          alert('Invalid Credentials')
+        } else if (data.status === "ok") {
+          alert('Registration Succesfull')
+          console.log(data, "userRegister");
+          window.localStorage.setItem("IsLoggedIn", true);
+          history("/home");
+        } else {
+          alert("Unknow error, try again");
+        }
+      });
+    // .then((data) => {
+    // })
   };
   return (
     <>

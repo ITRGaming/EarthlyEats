@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import './Community.css';
+import Footer from '../components/Footer';
 function Community() {
   return (
     <>
@@ -114,6 +115,7 @@ function Community() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
