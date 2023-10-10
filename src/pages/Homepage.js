@@ -2,6 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import ProductCard from '../components/ProductCard';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 // import ContactUs from '../components/Contactus';
 
 function Homepage() {
@@ -103,7 +104,7 @@ function Homepage() {
                     </div>
                 </div>
 
-                <div>
+                {/* <div>
                     <form className='form'>
                         <div>
                             <label htmlFor="name">Name:</label>
@@ -120,7 +121,8 @@ function Homepage() {
                         <button type="submit">Submit</button>
                     </form>
 
-                </div>
+                </div> */}
+                <Footer />
             </div>
         </>
     );
