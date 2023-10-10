@@ -12,7 +12,7 @@ function ProductCard({ id, productName, imageUrl }) {
       <div className="card-body text-center">
         <h5 className="card-title text-center">{productName}</h5>
         <button className="btn addtocart" onClick={() => displayRazorpay(500)}>
-          Add to Cart
+         Buy Now
         </button>
       </div>
     </div>
