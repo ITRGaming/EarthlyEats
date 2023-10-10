@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background:#79C96C;
+}
+.log_container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* max-width: 430px; */
+  width: 65%;
+  background: #fff;
+  border-radius: 7px;
+  /* box-shadow: 0 5px 10px 0 rgb(0, 0, 0); */
+}
+.log_container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: flex;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+} 
+.l_s_form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .l_s_form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .l_s_form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.l_s_form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.l_s_form a:hover{
+  text-decoration: underline;
+}
+.l_s_form input.button{
+  color: black;
+  background: #79C96C;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.l_s_form input.button:hover{
+  color: #79C96C;
+  background: black;
+  transition: all 0.4s linear;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+.auth_div{
+  /* width: fit-content; */
+  width: 50%;
+  /* min-width: 315px; */
+  height: 100%;
+  /* position: relative; */
+  overflow: hidden;
+}
+.auth_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover ;
+  object-position: center center;
+  top: 0;
+  left: 0;
+}
+.auth_page{
+  width: 50%;
+  height: auto;
+  padding: 2rem;
+  /* min-width: 315px; */
+}
+.l_s_form{
+  display: flex;
+  justify-content:safe;
+  width: 100%;
+}
+.sign_up_page{
+  width: 50%;
+}
+.sign_up{
+  width: 50%;
+}
+@media (max-width:1285px) {
+  .sign_up_img  {
+    height: 100% ;
+    width: auto;
+  }
+}
+@media (min-width:1140px ) {
+  .auth_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh;
+  }
+}
+
+@media (min-width: 818px) and (max-width: 1118px) {
+  .login_img{
+    height: 484px;
+  }
+}
+  
+
+
+@media (max-width: 818px){
+  .auth_div{
+    display: none;
+  }
+  .log_container{
+    width: 350px;
+  }
+  .l_s_form{
+    padding: 2rem;
+  }
+  .auth_page{
+    width: 100%;
+  }
+}
+  

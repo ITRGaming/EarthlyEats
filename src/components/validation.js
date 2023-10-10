@@ -26,4 +26,4 @@ function Validation(values) {
   });
 }
 
-module.exports = Validation;
+module.exports = { Validation };

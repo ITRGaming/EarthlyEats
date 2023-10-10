@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./sellerLogin.css";
 // import Validation from "../components/validation";
 // import Homepage from "./Homepage";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ export function signOut() {
   window.localStorage.removeItem("IsLoggedIn");
 }
 
-function Login() {
+function sellerLogin() {
   const history = useNavigate();
 
   const [loginValue, setLogin] = useState({
@@ -215,4 +215,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default sellerLogin;
