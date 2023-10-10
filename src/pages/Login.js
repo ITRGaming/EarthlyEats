@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import Validation from "../components/validation";
-import Homepage from "./Homepage";
+// import Homepage from "./Homepage";
 import { useNavigate } from "react-router-dom";
 
 export function signOut() {
@@ -31,16 +31,16 @@ function Login() {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        email: loginValue.loginEmail, 
+        email: loginValue.loginEmail,
         password: loginValue.loginPassword,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data, data.data, "userLoggedIn");
-        if(data.data != null){
-          alert("Succesfully LoggedIn")
-          history("/home")
+        if (data.data != null) {
+          alert("Succesfully LoggedIn");
+          history("/home");
         }
         window.localStorage.setItem("token", data.data);
         window.localStorage.setItem("IsLoggedIn", true);
@@ -57,21 +57,18 @@ function Login() {
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    const validationErrors = Validation({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+    setErrors(validationErrors);
   };
-  const handleValidation = (e) => {
-      e.preventDefault();
-      setErrors(Validation(values));
-      console.log(Object.keys(errors).length);
-      return Object.keys(errors).length === 0;
+  // const handleValidation = async (e) => {
+  // };
 
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    handleValidation(e);
-    
-    console.log(Object.keys(errors));
-    if (handleValidation(e)) {
+    setErrors(Validation(values));
       fetch("http://localhost:5000/register", {
         method: "POST",
         crossDomain: true,
@@ -83,27 +80,28 @@ function Login() {
         body: JSON.stringify({
           email: values.email,
           password: values.password,
+          confirm_password: values.password,
         }),
       })
         .then((res) => res.json())
-        // .then((data, reg) =>
-        // {
-        // 	console.log(data, reg)
-        // 	if (reg = "pass"){
-        // 	}
-        // })
         .then((data) => {
           console.log(data);
+          console.log(Object.keys(data));
           if (data.error === "Email already exists") {
             alert("User Already Exists");
-          } else {
+          } else if (data.error === " error"){
+            alert('Invalid Credentials')
+          } else if (data.status ==="ok"){
+            alert('Registration Succesfull')
             console.log(data, "userRegister");
-            alert("Registration Succesfull");
-          }
-        });
+            window.localStorage.setItem("IsLoggedIn", true);
+            history("/home");
+          }else{
+            alert("Unknow error, try again");
+          } 
+          });
       // .then((data) => {
       // })
-    }
   };
   return (
     <>
@@ -111,78 +109,98 @@ function Login() {
         <div className="log_container">
           <input type="checkbox" id="check" />
           <div className="login l_s_form">
-            <header>Login</header>
-            <form onSubmit={handleLogin}>
-              <input
-                type="text"
-                name="loginEmail"
-                placeholder="Enter your email"
-                onChange={handleData}
-                required
+            <div className="auth_div">
+              <img
+                className="auth_img login_img"
+                alt="login"
+                src="./images/auth_img.jpg"
               />
-              <input
-                type="password"
-                name="loginPassword"
-                placeholder="Enter your password"
-                onChange={handleData}
-                required
-              />
-              <a href="/forgotpass">Forgot password?</a>
-              <input
-                type="button"
-                className="button"
-                value="Login"
-                onClick={handleLogin}
-              />
-            </form>
-            <div className="signup">
-              <span className="signup">
-                Don't have an account?
-                <label for="check">Signup</label>
-              </span>
+            </div>
+            <div className="auth_page">
+              <header>Login</header>
+              <form onSubmit={handleLogin}>
+                <input
+                  type="text"
+                  name="loginEmail"
+                  placeholder="Enter your email"
+                  onChange={handleData}
+                  required
+                />
+                <input
+                  type="password"
+                  name="loginPassword"
+                  placeholder="Enter your password"
+                  onChange={handleData}
+                  required
+                />
+                <a href="/forgotpass">Forgot password?</a>
+                <input
+                  type="button"
+                  className="button"
+                  value="Login"
+                  onClick={handleLogin}
+                />
+              </form>
+              <div className="signup">
+                <span className="signup">
+                  Don't have an account?
+                  <label for="check">Signup</label>
+                </span>
+              </div>
             </div>
           </div>
 
           <div className="registration l_s_form">
-            <header>Signup</header>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="email"
-                placeholder="Enter your email"
-                onChange={handleChange}
+            <div className="auth_div sign_up">
+              <img
+                className="auth_img sign_up_img"
+                alt="sign_up"
+                src="./images/auth_img.jpg"
               />
-              {errors.email && <p style={{ color: "red" }}> {errors.email}</p>}
-              <input
-                type="password"
-                name="password"
-                placeholder="Create a password"
-                onChange={handleChange}
-              />
-              {errors.password && (
-                <p style={{ color: "red" }}> {errors.password}</p>
-              )}
-              <input
-                type="password"
-                name="confirm_password"
-                placeholder="Confirm your password"
-                onChange={handleChange}
-              />
-              {errors.confirm_password && (
-                <p style={{ color: "red" }}> {errors.confirm_password}</p>
-              )}
-              <input
-                type="button"
-                className="button"
-                value="Signup"
-                onClick={handleSubmit}
-              />
-            </form>
-            <div className="signup">
-              <span className="signup">
-                Already have an account?
-                <label for="check">Login</label>
-              </span>
+            </div>
+            <div className="auth_page sign_up_page">
+              <header>Signup</header>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Enter your email"
+                  onChange={handleChange}
+                />
+                {errors.email && (
+                  <p style={{ color: "red" }}> {errors.email}</p>
+                )}
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Create a password"
+                  onChange={handleChange}
+                />
+                {errors.password && (
+                  <p style={{ color: "red" }}> {errors.password}</p>
+                )}
+                <input
+                  type="password"
+                  name="confirm_password"
+                  placeholder="Confirm your password"
+                  onChange={handleChange}
+                />
+                {errors.confirm_password && (
+                  <p style={{ color: "red" }}> {errors.confirm_password}</p>
+                )}
+                <input
+                  type="button"
+                  className="button"
+                  value="Signup"
+                  onClick={handleSubmit}
+                />
+              </form>
+              <div className="signup">
+                <span className="signup">
+                  Already have an account?
+                  <label for="check">Login</label>
+                </span>
+              </div>
             </div>
           </div>
         </div>

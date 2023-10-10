@@ -1,6 +1,7 @@
 import React from "react";
 import "./ProductCard.css";
-function ProductCard({ productName, imageUrl }) {
+import products from "./product";
+function ProductCard({ id, productName, imageUrl }) {
   return (
     <div className="card">
       <div className="img-div">
@@ -8,7 +9,9 @@ function ProductCard({ productName, imageUrl }) {
       </div>
       <div className="card-body text-center">
         <h5 className="card-title text-center">{productName}</h5>
-        <button className="btn addtocart">Add to Cart</button>
+        <button className="btn addtocart">
+          Add to Cart
+        </button>
       </div>
     </div>
   );
