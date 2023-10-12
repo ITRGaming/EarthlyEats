@@ -1,13 +1,15 @@
 import React from 'react'
 import './AboutUs.css'
 import NavBar from '../components/NavBar';
+import NavBarseller from '../components/NavBarseller';
 import Footer from '../components/Footer';
+import { useAuth } from '../components/AuthContext';
 
 function AboutUs() {
-
+    const { sellerIsLoggedIn } = useAuth();
     return (
         <>
-            <NavBar />
+             {sellerIsLoggedIn ?  <NavBarseller /> : <NavBar />}
             <img
                 src='https://i.pinimg.com/564x/77/ee/82/77ee82816cebf6dccba8a9b044c737e1.jpg' // Replace with the path to your image
                 alt='EarthlyEats'
@@ -28,7 +30,7 @@ function AboutUs() {
                     <div className=" row my-4">
                         <div className='col-lg-6 order-1 order-lg-2 ' >
                             <div className='about-img'>
-                                <img src='./images/img3.jpg'></img>
+                                <img src='./images/img3.jpg' alt='about'></img>
                             </div>
                         </div>
                         <div className='col-lg-6 pt-4 pt-lg-0 order-0 order-lg-1 content'>

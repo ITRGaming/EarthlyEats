@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 // import Validation from "../components/validation";
 // import Homepage from "./Homepage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function signOut() {
   window.localStorage.removeItem("IsLoggedIn");
@@ -40,14 +40,14 @@ function Login() {
         console.log(data, data.data, "userLoggedIn");
         if (data.data != null) {
           alert("Succesfully LoggedIn");
+          window.localStorage.setItem("IsLoggedIn", true);
+          window.localStorage.setItem("token", data.data);
           history("/home");
         } else if (data.error === "User not found") {
           alert("User not found");
         } else if (data.error === "Invalid Password") {
           alert("Invalid Password");
         } else { alert("Unknow error, try again"); }
-        window.localStorage.setItem("token", data.data);
-        window.localStorage.setItem("IsLoggedIn", true);
       });
   };
 
@@ -152,6 +152,9 @@ function Login() {
                   Don't have an account?
                   <label for="check">Signup</label>
                 </span>
+              </div>
+              <div>
+                <Link to="/seller">Are you a seller?</Link>
               </div>
             </div>
           </div>

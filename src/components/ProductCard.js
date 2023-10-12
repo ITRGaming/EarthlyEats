@@ -1,9 +1,11 @@
 import React from "react";
 import "./ProductCard.css";
+import { useCart} from "react-use-cart"
 // import products from "./product";
-import { displayRazorpay } from "./razorpay";
+// import { displayRazorpay } from "./razorpay";
 
-function ProductCard({ id, productName, imageUrl }) {
+function ProductCard({ imageUrl, productName }) {
+  const { addItem } = useCart();
   return (
     <div className="card">
       <div className="img-div">
@@ -11,8 +13,8 @@ function ProductCard({ id, productName, imageUrl }) {
       </div>
       <div className="card-body text-center">
         <h5 className="card-title text-center">{productName}</h5>
-        <button className="btn addtocart" onClick={() => displayRazorpay(500)}>
-         Buy Now
+        <button className="btn addtocart" onClick={addItem}>
+         Add to cart
         </button>
       </div>
     </div>

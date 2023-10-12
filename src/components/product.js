@@ -1,3 +1,5 @@
+// import img1 from './images/plantbasedpeppypopcorn.png'
+
 const products = [
     // {
     //     id: 1,
