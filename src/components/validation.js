@@ -26,7 +26,7 @@ function Validation(values) {
   });
 }
 
-module.exports = { Validation };
+
 
 function sellerValidation(values) {
   return new Promise((resolve) => {
@@ -74,4 +74,4 @@ function sellerValidation(values) {
   });
 }
 
-module.exports = { sellerValidation };
+module.exports = { sellerValidation, Validation };

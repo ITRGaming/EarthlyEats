@@ -102,7 +102,7 @@ function Homepage() {
                         <div className="row">
                             {products.map((product, index) => (
                                 <div className="col-md-4" >
-                                    <ProductCard productName={product.productName} imageUrl={product.imageUrl} key={index}/>
+                                    <ProductCard productName={product.productName} price={product.price} imageUrl={product.imageUrl} item={product} key={index}/>       
                                 </div>
                             ))}
                         </div>

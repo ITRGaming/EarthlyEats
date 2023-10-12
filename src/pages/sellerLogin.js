@@ -3,14 +3,9 @@ import "./SellerLogin.css";
 import { useAuth } from "../components/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
-export function signOutseller() {
-  window.localStorage.removeItem("sellerIsLoggedIn");
-  // setIsLoggedIn(false);
-}
-
 function SellerLogin() {
-  const { setIsLoggedIn } = useAuth();
   const history = useNavigate();
+  const { setIsLoggedIn } = useAuth();
 
   const [loginValue, setLogin] = useState({
     loginEmail: "",
@@ -120,6 +115,8 @@ function SellerLogin() {
     // .then((data) => {
     // })
   };
+
+
   return (
     <>
       <section id="login">

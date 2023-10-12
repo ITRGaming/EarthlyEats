@@ -87,8 +87,8 @@ body{
   text-decoration: underline;
 }
 .auth_div{
-  /* width: fit-content; */
-  width: 50%;
+  width: fit-content;
+  /* width: 50%; */
   /* min-width: 315px; */
   height: 100%;
   /* position: relative; */
@@ -103,14 +103,15 @@ body{
   left: 0;
 }
 .auth_page{
-  width: 50%;
+  width: 40%;
   height: auto;
   padding: 2rem;
   /* min-width: 315px; */
 }
 .l_s_form{
   display: flex;
-  justify-content:safe;
+  /* justify-content:safe; */
+  align-items: center;
   width: 100%;
 }
 .sign_up_page{
@@ -126,17 +127,16 @@ body{
   }
 }
 @media (min-width:1140px ) {
-  .auth_page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 5vh;
-  }
+  .login_img{
+    height: 100%;
+    width: auto;
+  } 
 }
 
 @media (min-width: 818px) and (max-width: 1118px) {
   .login_img{
-    height: 484px;
+    height: 100%;
+    width: auto;
   }
 }
   

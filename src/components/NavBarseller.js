@@ -1,9 +1,16 @@
 import React from "react";
 import "./NavBarseller.css";
 import { Link } from "react-router-dom";
-import { signOutseller } from "../pages/SellerLogin";
+import { useAuth } from "./AuthContext";
+import { SignOutseller } from "./Signout";
 
 export default function NavBarseller() {
+  const { setIsLoggedIn } = useAuth();
+  const handleSignOutClick = () => {
+    // Call the signOutseller function when the button is clicked
+    SignOutseller(setIsLoggedIn);
+  };
+
   return (
     <>
       <div className="container-fluid">
@@ -49,13 +56,18 @@ export default function NavBarseller() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" onClick={signOutseller} to="/seller">
+                  <Link className="nav-link" onClick={handleSignOutClick} to="/seller">
                     Sign out
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/search">
                     <span class="material-symbols-outlined">search</span>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/cart">
+                    <span class="material-symbols-outlined">shopping_cart</span>
                   </Link>
                 </li>
               </ul>
