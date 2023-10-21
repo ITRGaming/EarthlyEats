@@ -11,8 +11,10 @@
 }
 
 #logo img {
-    width: 10rem;
-    height: 3rem;
+    width: 15rem;
+    height: auto;
+    border-radius: 4px;
+    background-blend-mode: multiply;
 }
 
 .nav-item {
