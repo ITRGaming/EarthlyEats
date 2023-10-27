@@ -6,16 +6,18 @@ import Login from "./pages/Login";
 import Community from "./pages/Community";
 import Search  from "./pages/Search"
 import { Cart } from './pages/Cart';
+import CustomerDetails from './pages/CustomerDetails';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="home" element={<Homepage />} />
-      <Route path="community" element={ <Community/>}  />
-      <Route path="search" element={ <Search/>} />
-      <Route path="cart" element={ <Cart/>} />
-    </Routes>
+    <CustomerDetails />
+    // <Routes>
+    //   <Route path="/" element={<Login />} />
+    //   <Route path="home" element={<Homepage />} />
+    //   <Route path="community" element={ <Community/>}  />
+    //   <Route path="search" element={ <Search/>} />
+    //   <Route path="cart" element={ <Cart/>} />
+    // </Routes>
   );
 }
 
