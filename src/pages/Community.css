@@ -21,10 +21,10 @@ body {
     background-color: #FEFFBF;
 } */
 .pigu {
-  background-size: cover;
-
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 300px;
+  height: auto;
 }
 
 .bg {

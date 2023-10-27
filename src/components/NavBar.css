@@ -11,14 +11,17 @@
 }
 
 #logo img {
-    width: 10rem;
-    height: 3rem;
+    width: 15rem;
+    height: auto;
+    border-radius: 4px;
+    background-blend-mode: multiply;
 }
 
 .nav-item {
     margin: 0 0.6rem;
     font-weight: bold;
     border-bottom: 2px solid transparent;
+    font-size: large;
 }
 
 .nav-item a {

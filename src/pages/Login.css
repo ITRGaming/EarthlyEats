@@ -18,7 +18,7 @@ body{
   /* max-width: 430px; */
   width: 65%;
   background: #fff;
-  border-radius: 7px;
+  border-radius: 15px;
   /* box-shadow: 0 5px 10px 0 rgb(0, 0, 0); */
 }
 .log_container .registration{
@@ -101,6 +101,7 @@ body{
   object-position: center center;
   top: 0;
   left: 0;
+  border-radius: 15px 0px 0px 15px;
 }
 .auth_page{
   width: 50%;
