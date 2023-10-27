@@ -1,0 +1,109 @@
+/* CustomerDetails.css
+
+.customer-details {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-details h2 {
+    text-align: center;
+  }
+  
+  .customer-details form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .customer-details label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .customer-details input,
+  .customer-details select,
+  .customer-details textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .customer-details button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .customer-details button:hover {
+    background-color: #0056b3;
+  }
+   */
+   /* CustomerDetails.css */
+
+.customer-details {
+    padding-top: 100px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  
+  .customer-details h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .customer-details form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .customer-details label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .customer-details input,
+  .customer-details select,
+  .customer-details textarea {
+
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  
+  .customer-details button {
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #f1f13b;
+    color: #2c2b2b;
+    padding: 12px 24px;
+    border: none;
+
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .customer-details button:hover {
+    background-color: #f3f9ca;
+    border: black 1px solid;
+  }
+  

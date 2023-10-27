@@ -75,6 +75,9 @@ function Search() {
     return (
         <>
             {sellerIsLoggedIn ?  <NavBarseller /> : <NavBar />}
+            <div className="need">
+                <h1>Need a Specific Product?</h1>
+            </div>
             <form className="form-inline">
                 <input class="form-control mr-sm-2" type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search" aria-label="Search" />
                 {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
