@@ -71,9 +71,6 @@ function Search() {
     //         productName: 'Plant Based Beyond Beef ',
     //         imageUrl: './images/beef.png', // Replace with the actual image URL
     //     },
-        
-
-
     // ];
     return (
         <>
