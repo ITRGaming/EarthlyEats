@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SellerLogin.css";
+import "./sellerLogin.css";
 import { useAuth } from "../components/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
