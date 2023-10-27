@@ -25,7 +25,7 @@
     font-size: 30px;
   }
   
-  .countHandler input {
+  .countHandler {
     width: 40px;
     text-align: center;
     font-weight: bolder;

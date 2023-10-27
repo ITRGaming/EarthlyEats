@@ -1,10 +1,14 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
+import NavBarseller from '../components/NavBarseller';
 import './Community.css';
+import Footer from '../components/Footer';
+import { useAuth } from '../components/AuthContext';
 function Community() {
+  const { sellerIsLoggedIn } = useAuth();
   return (
     <>
-      <NavBar />
+       {sellerIsLoggedIn ?  <NavBarseller /> : <NavBar />}
       <div>
         <div className="bg">
           <img
@@ -44,7 +48,7 @@ function Community() {
         {/* //1st card */}
         <div className="horizontal-box">
           <div className="image">
-            <img src="./images/ras.png" alt="Description Image" />
+            <img src="./images/ras.png" alt="Description " />
           </div>
           <div className="description">
             <h2 className="ras">Reduction of Animal Suffering</h2>
@@ -74,13 +78,13 @@ function Community() {
             </p>
           </div>
           <div className="image-right">
-            <img src="./images/poae.png" alt="Description Image" />
+            <img src="./images/poae.png" alt="Description " />
           </div>
         </div>
         {/* //3rd card */}
         <div className="horizontal-box">
           <div className="image">
-            <img src="./images/ras.png" alt="Description Image" />
+            <img src="./images/ras.png" alt="Description " />
           </div>
           <div className="description">
             <h2 className="ras">Conservation of Wildlife</h2>
@@ -110,10 +114,11 @@ function Community() {
             </p>
           </div>
           <div className="image-right">
-            <img src="./images/poae.png" alt="Description Image" />
+            <img src="./images/poae.png" alt="Description" />
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

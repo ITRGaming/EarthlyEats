@@ -18,7 +18,7 @@ body{
   /* max-width: 430px; */
   width: 65%;
   background: #fff;
-  border-radius: 15px;
+  border-radius: 7px;
   /* box-shadow: 0 5px 10px 0 rgb(0, 0, 0); */
 }
 .log_container .registration{
@@ -101,18 +101,16 @@ body{
   object-position: center center;
   top: 0;
   left: 0;
-  border-radius: 15px 0px 0px 15px;
 }
-.auth_page{
-  width: 50%;
+/* .auth_page{
+  width: 40%;
   height: auto;
   padding: 2rem;
-  /* min-width: 315px; */
-}
+  min-width: 315px;
+} */
 .l_s_form{
   display: flex;
-  justify-content: stretch;
-  align-items: center;
+  /* justify-content:safe; */
   width: 100%;
 }
 .sign_up_page{
@@ -143,7 +141,7 @@ body{
   
 
 
-@media (max-width: 1118px){
+@media (max-width: 818px){
   .auth_div{
     display: none;
   }

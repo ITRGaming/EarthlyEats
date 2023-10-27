@@ -1,16 +1,23 @@
 import React from "react";
-import "./NavBar.css";
+import "./NavBarseller.css";
 import { Link } from "react-router-dom";
-import { signOut } from "../pages/Login";
+import { useAuth } from "./AuthContext";
+import { SignOutseller } from "./Signout";
 
-export default function NavBar() {
+export default function NavBarseller() {
+  const { setIsLoggedIn } = useAuth();
+  const handleSignOutClick = () => {
+    // Call the signOutseller function when the button is clicked
+    SignOutseller(setIsLoggedIn);
+  };
+
   return (
     <>
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg bg-body-tertiary" id="navId">
           <div className="container-fluid">
             <Link className="navbar-brand" id="logo" to="/home">
-              <img src="./images/logo2.png" alt="not found" />
+              <img src="./images/logo.png" alt="not found" />
             </Link>
             <button
               className="navbar-toggler"
@@ -44,7 +51,12 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" onClick={signOut} to="/">
+                  <Link className="nav-link" to="/product">
+                    Add Product
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" onClick={handleSignOutClick} to="/seller">
                     Sign out
                   </Link>
                 </li>

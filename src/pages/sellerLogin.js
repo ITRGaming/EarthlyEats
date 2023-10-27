@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import "./Login.css";
-// import Validation from "../components/validation";
-// import Homepage from "./Homepage";
-import { useNavigate } from "react-router-dom";
+import "./SellerLogin.css";
+import { useAuth } from "../components/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 
-export function signOut() {
-  window.localStorage.removeItem("IsLoggedIn");
-}
-
-function Login() {
+function SellerLogin() {
   const history = useNavigate();
+  const { setIsLoggedIn } = useAuth();
 
   const [loginValue, setLogin] = useState({
     loginEmail: "",
@@ -22,7 +18,7 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/login-user", {
+    fetch("http://localhost:5000/login-seller", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -37,14 +33,15 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, data.data, "userLoggedIn");
+        console.log(data, data.data, "sellerIsLoggedIn");
         if (data.data != null) {
           alert("Succesfully LoggedIn");
-          window.localStorage.setItem("IsLoggedIn", true);
           window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("IsLoggedIn", true);
+          setIsLoggedIn(true);
           history("/home");
-        } else if (data.error === "User not found") {
-          alert("User not found");
+        } else if (data.error === "Seller not found") {
+          alert("Seller not found");
         } else if (data.error === "Invalid Password") {
           alert("Invalid Password");
         } else { alert("Unknow error, try again"); }
@@ -52,11 +49,17 @@ function Login() {
   };
 
   const [values, setValues] = useState({
+    name:"",
+    gst:"",
+    contact: null,
     email: "",
     password: "",
     confirm_password: "",
   });
   const [errors, setErrors] = useState({
+    name:"",
+    gst:"",
+    contact: null,
     email: "",
     password: "",
     confirm_password: "",
@@ -76,7 +79,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // setErrors(Validation(values));
-    fetch("http://localhost:5000/register", {
+    fetch("http://localhost:5000/seller-register", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -85,6 +88,9 @@ function Login() {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
+        name: values.name,
+        gst: values.gst,
+        contact: values.contact,
         email: values.email,
         password: values.password,
         confirm_password: values.confirm_password,
@@ -99,7 +105,7 @@ function Login() {
         } else if (data.status === "ok") {
           alert('Registration Succesfull')
           console.log(data, "userRegister");
-          window.localStorage.setItem("IsLoggedIn", true);
+          window.localStorage.setItem("SellerIsLoggedIn", true);
           history("/home");
         } else {
           alert("Invalid Credentials");
@@ -109,6 +115,8 @@ function Login() {
     // .then((data) => {
     // })
   };
+
+
   return (
     <>
       <section id="login">
@@ -149,13 +157,13 @@ function Login() {
               </form>
               <div className="signup">
                 <span className="signup">
-                  Don't have an account?
+                  Don't have a seller's account?
                   <label for="check">Signup</label>
                 </span>
               </div>
-              {/* <div>
-                <Link to="/seller">Are you a seller?</Link>
-              </div> */}
+              <div>
+              <Link to="/">Not a seller?</Link>
+              </div>
             </div>
           </div>
 
@@ -170,6 +178,33 @@ function Login() {
             <div className="auth_page sign_up_page">
               <header>Signup</header>
               <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  onChange={handleChange}
+                />
+                {errors.name && (
+                  <p style={{ color: "red" }}> {errors.name}</p>
+                )}
+                <input
+                  type="text"
+                  name="gst"
+                  placeholder="Enter your gst"
+                  onChange={handleChange}
+                />
+                {errors.gst && (
+                  <p style={{ color: "red" }}> {errors.gst}</p>
+                )}
+                <input
+                  type="number"
+                  name="contact"
+                  placeholder="Enter your contact"
+                  onChange={handleChange}
+                />
+                {errors.contact && (
+                  <p style={{ color: "red" }}> {errors.contact}</p>
+                )}
                 <input
                   type="text"
                   name="email"
@@ -206,7 +241,7 @@ function Login() {
               </form>
               <div className="signup">
                 <span className="signup">
-                  Already have an account?
+                  Already have a seller's account?
                   <label for="check">Login</label>
                 </span>
               </div>
@@ -218,4 +253,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SellerLogin;
