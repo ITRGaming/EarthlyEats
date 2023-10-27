@@ -19,7 +19,12 @@ const Cart = () => {
     emptyCart,
   } = useCart();
   if (isEmpty) return(<> {sellerIsLoggedIn ? <NavBarseller /> : <NavBar />}
-  <h1 className="text-center">Your Cart is Empty</h1></>)
+  <h1 className="cartisempty">Your cart is feeling empty and sad 😢</h1>
+  <h4 className="anothertext">But you can cheer it up by <span className="span"> adding some of our fabulous products</span> to it 💃</h4>
+  <img  src="https://media.giphy.com/media/uZ7wLTpoMbtikW2wUY/giphy.gif" alt="emptycart" className="emptycartgif"/>
+  </>
+  )
+  
    const buynow =() => {
     displayRazorpay(cartTotal);
     // console.log(cartTotal)
