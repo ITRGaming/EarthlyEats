@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 // import Validation from "../components/validation";
 // import Homepage from "./Homepage";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function signOut() {
   window.localStorage.removeItem("IsLoggedIn");
@@ -153,9 +153,9 @@ function Login() {
                   <label for="check">Signup</label>
                 </span>
               </div>
-              <div>
+              {/* <div>
                 <Link to="/seller">Are you a seller?</Link>
-              </div>
+              </div> */}
             </div>
           </div>
 

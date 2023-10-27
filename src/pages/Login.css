@@ -103,14 +103,14 @@ body{
   left: 0;
 }
 .auth_page{
-  width: 40%;
+  width: 50%;
   height: auto;
   padding: 2rem;
   /* min-width: 315px; */
 }
 .l_s_form{
   display: flex;
-  /* justify-content:safe; */
+  justify-content: stretch;
   align-items: center;
   width: 100%;
 }
@@ -130,19 +130,19 @@ body{
   .login_img{
     height: 100%;
     width: auto;
-  } 
+  }
 }
 
-@media (min-width: 818px) and (max-width: 1118px) {
+/* @media (min-width: 818px) and (max-width: 1118px) {
   .login_img{
     height: 100%;
     width: auto;
   }
-}
+} */
   
 
 
-@media (max-width: 818px){
+@media (max-width: 1118px){
   .auth_div{
     display: none;
   }

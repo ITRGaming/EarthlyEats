@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import '../components/ProductCard.css';
 import ProductCard from '../components/ProductCard';
+import { useAuth } from '../components/AuthContext';
 import products from '../components/product';
-import "./Search.css"
+import "./Search.css";
+import NavBar from '../components/NavBar';
+import NavBarseller from '../components/NavBarseller';
 
 
 function Search() {
+    const { sellerIsLoggedIn } = useAuth();
     const [search, setSearch] = useState('');
-    console.log(search);
+    // console.log(search);
 
 
     // const products = [
@@ -73,6 +77,7 @@ function Search() {
     // ];
     return (
         <>
+            {sellerIsLoggedIn ?  <NavBarseller /> : <NavBar />}
             <form className="form-inline">
                 <input class="form-control mr-sm-2" type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search" aria-label="Search" />
                 {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
@@ -87,9 +92,9 @@ function Search() {
                                 const productName = product.productName || " "; // Ensure productName is a string
                                 return search.toLowerCase() === "" ? true : productName.toLowerCase().includes(search.toLowerCase());
                             })
-                            .map((product) => (
+                            .map((product, index) => (
                                 <div className="col-md-4" key={product.id}>
-                                    <ProductCard productName={product.productName} price={product.price} imageUrl={product.imageUrl} />
+                                    <ProductCard productName={product.productName} price={product.price} imageUrl={product.imageUrl} item={product} key={index}/>
                                 </div>
                             ))}
 

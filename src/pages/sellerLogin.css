@@ -102,15 +102,15 @@ body{
   top: 0;
   left: 0;
 }
-.auth_page{
+/* .auth_page{
   width: 40%;
   height: auto;
   padding: 2rem;
-  /* min-width: 315px; */
-}
+  min-width: 315px;
+} */
 .l_s_form{
   display: flex;
-  justify-content:safe;
+  /* justify-content:safe; */
   width: 100%;
 }
 .sign_up_page{
@@ -132,12 +132,12 @@ body{
   }
 }
 
-@media (min-width: 818px) and (max-width: 1118px) {
+/* @media (min-width: 818px) and (max-width: 1118px) {
   .login_img{
     height: 100%;
     width: auto;
   }
-}
+} */
   
 
 

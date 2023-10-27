@@ -10,7 +10,7 @@ import products from '../components/product';
 
 function Homepage() {
     const { sellerIsLoggedIn } = useAuth();
-    console.log(products)   
+    // console.log(products)   
     // const goToCartPage = () => {
 
 
