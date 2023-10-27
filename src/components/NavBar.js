@@ -10,7 +10,7 @@ export default function NavBar() {
         <nav className="navbar navbar-expand-lg bg-body-tertiary" id="navId">
           <div className="container-fluid">
             <Link className="navbar-brand" id="logo" to="/home">
-              <img src="./images/logo2.png" alt="not found" />
+              <img src="./images/logo.png" alt="not found" />
             </Link>
             <button
               className="navbar-toggler"
